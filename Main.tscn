@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnjffnbdhakqh"]
+
+[ext_resource type="PackedScene" uid="uid://bvn4e6wgedy0e" path="res://Player.tscn" id="1_jnrri"]
+[ext_resource type="Script" path="res://Main.gd" id="1_lgh26"]
+[ext_resource type="PackedScene" uid="uid://bqhlfno4ynmsi" path="res://Mob.tscn" id="2_4dmqn"]
+
+[sub_resource type="Curve2D" id="Curve2D_h01t4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 3, 0, 0, 0, 0, 478, 0, 0, 0, 0, 0, 478, 719, 0, 0, 0, 0, -5, 716, 0, 0, 0, 0, -1, 3)
+}
+point_count = 5
+
+[node name="Main" type="Node"]
+script = ExtResource("1_lgh26")
+mob_scene = ExtResource("2_4dmqn")
+
+[node name="Player" parent="." instance=ExtResource("1_jnrri")]
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 450)
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_h01t4")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+position = Vector2(-1, 3)
+rotation = -0.00626297
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
