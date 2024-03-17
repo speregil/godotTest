@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyc0lapqrbau4"]
+
+[ext_resource type="Script" path="res://characters/hero/hero.gd" id="1_1vvv3"]
+[ext_resource type="Texture2D" uid="uid://chuxgx077t1uo" path="res://characters/hero/sprites/hero.png" id="1_dypm2"]
+[ext_resource type="Texture2D" uid="uid://dm35vrc4r4si6" path="res://characters/hero/sprites/hero2.png" id="2_s2k8l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4krl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dypm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s2k8l")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sidq3"]
+size = Vector2(38, 23)
+
+[node name="Hero" type="CharacterBody2D"]
+slide_on_ceiling = false
+script = ExtResource("1_1vvv3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j4krl")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3.5)
+shape = SubResource("RectangleShape2D_sidq3")
