@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyc0lapqrbau4"]
+[gd_scene load_steps=14 format=3 uid="uid://cyc0lapqrbau4"]
 
 [ext_resource type="Script" path="res://characters/hero/hero.gd" id="1_1vvv3"]
 [ext_resource type="Texture2D" uid="uid://chuxgx077t1uo" path="res://characters/hero/sprites/hero-walk-up-1.png" id="1_dypm2"]
 [ext_resource type="Texture2D" uid="uid://dm35vrc4r4si6" path="res://characters/hero/sprites/hero-walk-up-2.png" id="2_s2k8l"]
 [ext_resource type="Texture2D" uid="uid://376uqc2xoyht" path="res://characters/hero/sprites/hero-walk-right-1.png" id="2_tum1l"]
+[ext_resource type="Texture2D" uid="uid://diobh464kecvs" path="res://characters/hero/sprites/hero-idle-2.png" id="3_f10wv"]
 [ext_resource type="Texture2D" uid="uid://bgf2yavmrrkun" path="res://characters/hero/sprites/hero-walk-right-2.png" id="4_3vhl7"]
+[ext_resource type="Texture2D" uid="uid://da1f4341wchdx" path="res://characters/hero/sprites/hero-idle-3.png" id="4_8r7gs"]
 [ext_resource type="Texture2D" uid="uid://c61ove3w8ljib" path="res://characters/hero/sprites/hero-walk-up-3.png" id="4_fgsxi"]
 [ext_resource type="Texture2D" uid="uid://buij7mk2xm6ue" path="res://characters/hero/sprites/hero-walk-right-3.png" id="5_0l0qr"]
 [ext_resource type="Texture2D" uid="uid://bple7w57vhihy" path="res://characters/hero/sprites/hero-walk-up-4.png" id="5_emg0r"]
@@ -15,6 +17,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_dypm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f10wv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dypm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8r7gs")
 }],
 "loop": true,
 "name": &"idle",
@@ -68,7 +79,7 @@ speed = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j4krl")
-animation = &"walk-right"
+animation = &"walk-up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3.5)

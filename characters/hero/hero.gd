@@ -12,6 +12,7 @@ extends CharacterBody2D
 #-------------------------------------------------------------------------------
 func _ready():
 	$AnimatedSprite2D.animation = "idle";
+	$AnimatedSprite2D.play();
 	
 func _physics_process(delta):
 	var input_direction = Vector2(
@@ -35,6 +36,5 @@ func move_animation():
 			$AnimatedSprite2D.flip_h = velocity.x < 0;
 		elif velocity.y != 0:
 			$AnimatedSprite2D.animation = "walk-up";
-		$AnimatedSprite2D.play();
 	else:
-		$AnimatedSprite2D.stop();
+		$AnimatedSprite2D.animation = "idle";
