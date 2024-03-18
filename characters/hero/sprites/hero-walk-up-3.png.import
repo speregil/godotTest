@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm35vrc4r4si6"
-path="res://.godot/imported/hero2.png-20e3edfce93a0e689ede9f9bcc5a3d40.ctex"
+uid="uid://c61ove3w8ljib"
+path="res://.godot/imported/hero-walk-up-3.png-2a57cb8d8d41c9e6eef6d065a6708c60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/hero/sprites/hero2.png"
-dest_files=["res://.godot/imported/hero2.png-20e3edfce93a0e689ede9f9bcc5a3d40.ctex"]
+source_file="res://characters/hero/sprites/hero-walk-up-3.png"
+dest_files=["res://.godot/imported/hero-walk-up-3.png-2a57cb8d8d41c9e6eef6d065a6708c60.ctex"]
 
 [params]
 
